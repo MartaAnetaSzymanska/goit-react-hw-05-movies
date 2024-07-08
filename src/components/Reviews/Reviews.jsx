@@ -1,3 +1,5 @@
-export const Reviews = () => {
+const Reviews = () => {
   return <></>;
 };
+
+export default Reviews;

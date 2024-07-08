@@ -1,20 +1,18 @@
 import { useEffect, useState } from "react";
-import { fetchTrendingMovies } from "../../services/themoviedb-api.js";
+import { Link } from "react-router-dom";
 
-export const Home = () => {
+const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
 
   useEffect(() => {
-    async () => {
-      try {
-        const movies = await fetchTrendingMovies();
-        console.log(movies);
-        setTrendingMovies(movies);
-      } catch (error) {
-        console.errog(error);
-      }
-    };
+    fetch(
+      `https://api.themoviedb.org/3/trending/movie/day?api_key=36fc399726a5f27b3949cb8beaec3042`,
+    )
+      .then((response) => response.json())
+      .then((data) => setTrendingMovies(data.results))
+      .catch((err) => console.error(err));
   }, []);
+
   return (
     <div>
       <h1>Trending today</h1>
@@ -28,3 +26,5 @@ export const Home = () => {
     </div>
   );
 };
+
+export default Home;

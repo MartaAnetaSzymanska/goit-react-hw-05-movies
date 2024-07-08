@@ -1,1 +1,2 @@
-export const Cast = () => {};
+const Cast = () => {};
+export default Cast;
