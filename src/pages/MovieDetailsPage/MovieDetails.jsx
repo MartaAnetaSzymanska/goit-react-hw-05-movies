@@ -4,7 +4,7 @@ import { Button } from "../../components/Button/Button";
 
 const MovieDetails = () => {
   const { movieId } = useParams;
-  const { movie, setMovie } = useState();
+  const [movie, setMovie] = useState();
   const location = useLocation();
   const backLinkHref = location.state?.from ?? "movies";
   const base_url = "https://image.tmdb.org/t/p/w500";
