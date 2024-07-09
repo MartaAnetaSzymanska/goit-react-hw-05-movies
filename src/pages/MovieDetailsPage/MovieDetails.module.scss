@@ -2,7 +2,13 @@
   display: flex;
   align-items: left;
   gap: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid grey;
 }
 .buttonContainer {
   padding-top: 10px;
+}
+.additionalContainer {
+  padding-bottom: 10px;
+  border-bottom: 2px solid grey;
 }

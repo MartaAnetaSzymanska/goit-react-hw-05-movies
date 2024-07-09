@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import styles from "./Movies.module.scss";
 const Movies = () => {
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
@@ -8,14 +8,14 @@ const Movies = () => {
   const handleSearch = (e) => {
     e.preventDefault();
     fetch(
-      `https://api.themoviedb.org/3/search/movie?api_key=36fc399726a5f27b3949cb8beaec3042=${query}`,
+      `https://api.themoviedb.org/3/search/movie?api_key=36fc399726a5f27b3949cb8beaec3042&query=${query}`,
     )
       .then((response) => response.json())
       .then((data) => setMovies(data.results));
   };
 
   return (
-    <div>
+    <div className={styles.moviesContainer}>
       <h2>Search Movies</h2>
       <form onSubmit={handleSearch}>
         <input

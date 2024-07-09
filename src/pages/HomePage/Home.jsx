@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import styles from "./Home.module.scss";
 
 const Home = () => {
   const [trendingMovies, setTrendingMovies] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
+    <div className={styles.trendingContainer}>
       <h1>Trending today</h1>
       <ul>
         {trendingMovies.map((movie) => (

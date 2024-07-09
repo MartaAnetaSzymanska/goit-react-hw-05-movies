@@ -52,7 +52,7 @@ const MovieDetails = () => {
 
       <div>
         <h3>Additional information</h3>
-        <ul>
+        <ul className={styles.additionalContainer}>
           <li>
             <Link to="cast">Cast</Link>
           </li>
